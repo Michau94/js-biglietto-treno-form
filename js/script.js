@@ -42,13 +42,14 @@ var resetBtn = document.getElementById('reset-btn');
 
 
 
-//Display output
+//Display output (elements)
 var passengerDisplay = document.getElementById('passenger');
 var offerDisplay = document.getElementById('offer');
 var carDisplay = document.getElementById('car');
 var trainDisplay = document.getElementById('train');
 var priceDisplay = document.getElementById('price');
 
+// display section
 var ticketSection = document.getElementById('ticket-section');
 
 
@@ -68,7 +69,8 @@ generateBtn.addEventListener('click', function () {
     var price = kmsValue * 0.21;
     var priceRange = 'Tariffa ordinaria';
     var randomCar = Math.floor(Math.random() * 12) + 1;
-    // todo random train number
+    var randomTrain = Math.floor(90000 + Math.random() * 9000);
+    console.log(randomTrain);
 
 
     // se minorenne
@@ -94,7 +96,7 @@ generateBtn.addEventListener('click', function () {
     passengerDisplay.innerHTML = nameValue;
     offerDisplay.innerHTML = priceRange;
     carDisplay.innerHTML = randomCar;
-    //todo train number here
+    trainDisplay.innerHTML = randomTrain;
     priceDisplay.innerHTML = '€ ' + price.toFixed(2);
 
 
