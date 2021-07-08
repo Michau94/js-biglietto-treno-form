@@ -49,9 +49,53 @@ console.log('Distanza percorsa: ', kmsValue);
 var ageValue = ageField.value;
 console.log('Fascia età:', ageValue);
 
+//Display output
+var passengerDisplay = document.getElementById('passenger');
+var offerDisplay = document.getElementById('offer');
+var carDisplay = document.getElementById('car');
+var trainDisplay = document.getElementById('train');
+var priceDisplay = document.getElementById('price');
+
+
 // Bottone generazione biglietto
 generateBtn.addEventListener('click', function () {
-    alert('cliccato');
+    var price = kmsValue * 0.21;
+    var priceRange = 'Tariffa ordinaria';
+    var randomCar = Math.floor(Math.random() * 12) + 1;
+    // todo random train number
+
+
+    // se minorenne
+    if (ageValue === 'min') {
+        price *= 0.8;
+        priceRange = 'Tariffa Minori';
+    }
+
+    // se over 65
+    if (ageValue === 'over65') {
+        price *= 0.6;
+        priceRange = 'Tariffa Senior';
+    }
+
+    //controllo
+
+    console.log(price);
+    console.log(priceRange);
+
+
+
+    // stampa dati negli appositi campi
+    passengerDisplay.innerHTML = nameValue;
+    offerDisplay.innerHTML = priceRange;
+    carDisplay.innerHTML = randomCar;
+    //todo train number here
+    priceDisplay.innerHTML = '€ ' + price.toFixed(2);
+
+
+
+
+
+
 });
 
 
