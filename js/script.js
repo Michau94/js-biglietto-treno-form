@@ -41,13 +41,6 @@ var generateBtn = document.getElementById('generate-btn');
 var resetBtn = document.getElementById('reset-btn');
 
 
-// Var DATI inseriti
-var nameValue = nameField.value;
-console.log('Nome inserito: ', nameValue);
-var kmsValue = kmsField.value;
-console.log('Distanza percorsa: ', kmsValue);
-var ageValue = ageField.value;
-console.log('Fascia età:', ageValue);
 
 //Display output
 var passengerDisplay = document.getElementById('passenger');
@@ -56,9 +49,22 @@ var carDisplay = document.getElementById('car');
 var trainDisplay = document.getElementById('train');
 var priceDisplay = document.getElementById('price');
 
+var ticketSection = document.getElementById('ticket-section');
+
 
 // Bottone generazione biglietto
 generateBtn.addEventListener('click', function () {
+
+    // Var DATI inseriti
+
+    var nameValue = nameField.value;
+    console.log('Nome inserito: ', nameValue);
+    var kmsValue = kmsField.value;
+    console.log('Distanza percorsa: ', kmsValue);
+    var ageValue = ageField.value;
+    console.log('Fascia età:', ageValue);
+
+
     var price = kmsValue * 0.21;
     var priceRange = 'Tariffa ordinaria';
     var randomCar = Math.floor(Math.random() * 12) + 1;
@@ -92,11 +98,26 @@ generateBtn.addEventListener('click', function () {
     priceDisplay.innerHTML = '€ ' + price.toFixed(2);
 
 
+    // reset valori inserimento
+    nameField.value = '';
+    ageField.value = 'maj';
 
 
-
+    //visibilità sezione biglietto
+    ticketSection.classList.remove('hidden');
 
 });
+
+// Bottone reset totale 
+resetBtn.addEventListener('click', function () {
+    nameField.value = '';
+    kmsField.value = '10';
+    ageField.value = 'maj';
+
+    // Reset nasconde di nuovo la sezione biglietto
+    ticketSection.classList.add('hidden');
+});
+
 
 
 

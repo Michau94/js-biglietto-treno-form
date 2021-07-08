@@ -9,3 +9,9 @@
 .p-15 {
     padding: 15px;
 }
+
+/* MAIN */
+
+.hidden {
+    visibility: hidden;
+}
