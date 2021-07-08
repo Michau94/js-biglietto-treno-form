@@ -6,4 +6,6 @@
     box-sizing: border-box;
 }
 
-
+.p-15 {
+    padding: 15px;
+}
