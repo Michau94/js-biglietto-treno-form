@@ -12,33 +12,55 @@
 <body>
     <!-- INSERIMENTO DATI VIAGGIATORE -->
     <main>
-        <section class="p-15">
-            <h1>Inserisci i tuoi dati di viaggio: </h1>
-            <label for="name">Nome Passeggero</label>
-            <input type="text" id="name">
-            <label for="kms">Distanza percorsa (km)</label>
-            <input type="number" id="kms" min="10" value="10">
-            <label for="age">Fascia d'età: </label>
-            <select name="age" id="age">
-                <option value="min">Minorenne</option>
-                <option value="maj" selected>Maggiorenne</option>
-                <option value="over65">Over 65</option>
-            </select>
-            <!-- bottoni -->
-            <div>
-                <button id="generate-btn">Genera Biglietto</button>
-                <button id="reset-btn">Resetta</button>
-            </div>
-        </section>
-        <!-- riepilogo dati bigleitto-->
-        <section id="ticket-section" class="p-15 hidden ">
-            <h1>Il tuo biglietto</h1>
-            <p>Nome Passeggero: <span id="passenger"></span></p>
-            <p>Offerta: <span id="offer"></span></p>
-            <p>Carrozza: <span id="car"></span></p>
-            <p>Codice treno: <span id="train"></span></p>
-            <p>Prezzo biglietto: <span id="price"></span></p>
-        </section>
+        <div class="container flex-c">
+            <section id="info-section" class="p-15 text-center">
+                <h1>Inserisci i tuoi dati di viaggio: </h1>
+                <div class="info m-15">
+
+                    <label for="name">Nome Passeggero</label>
+                    <input type="text" id="name">
+                </div>
+
+                <div class="info m-15">
+                    <label for="kms">Distanza percorsa (km)</label>
+                    <input type="number" id="kms" min="10" value="10">
+                </div>
+                <div class="info m-15">
+                    <label for="age">Fascia d'età: </label>
+                    <select name="age" id="age">
+                        <option value="min">Minorenne</option>
+                        <option value="maj" selected>Maggiorenne</option>
+                        <option value="over65">Over 65</option>
+                    </select>
+                </div>
+                <!-- bottoni -->
+                <div class="buttons m-15">
+                    <button id="generate-btn">Genera Biglietto</button>
+                    <button id="reset-btn">Resetta</button>
+                </div>
+            </section>
+            <!-- riepilogo dati bigleitto-->
+            <section id="ticket-section" class="p-15 hidden text-center">
+                <div class="flex">
+                    <h1>Il tuo biglietto</h1>
+                    <div class="info p-15"><strong>Nome Passeggero:</strong>
+                        <div class="text-red" id="passenger"></div>
+                    </div>
+                    <div class="info p-15"><strong>Offerta:</strong>
+                        <div id="offer" class="text-red"></div>
+                    </div>
+                    <div class="info p-15"><strong>Carrozza:</strong>
+                        <div id="car" class="text-red"></div>
+                    </div>
+                    <div class="info p-15"><strong>Codice treno:</strong>
+                        <div id="train" class="text-red"></div>
+                    </div>
+                    <div class="info p-15"><strong>Prezzo biglietto:</strong>
+                        <div class="text-red" id="price"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
 

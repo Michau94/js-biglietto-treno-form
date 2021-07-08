@@ -6,14 +6,85 @@
     box-sizing: border-box;
 }
 
+body {
+    height: 100vh;
+    background-image: url(../img/trenitalia_hero_2x.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
 /* utils */
 
 .p-15 {
     padding: 15px;
 }
 
-/* MAIN */
+.m-15 {
+    margin: 15px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-red {
+    color: red;
+}
 
 .hidden {
     visibility: hidden;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-c {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAIN */
+
+#info-section {
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, .3);
+    font-size: 1.2rem;
+    box-shadow: 5px 6px 5px 3px red;
+}
+
+.info {
+    display: inline-block;
+}
+
+/* BTN */
+
+#generate-btn, #reset-btn {
+    padding: 15px;
+    margin: 10px;
+}
+
+/* TICKET SECTION */
+
+#ticket-section {
+    padding: 50px 20px;
+    border: 1px solid black;
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 20px;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    box-shadow: 5px 6px 5px 3px red;
 }
