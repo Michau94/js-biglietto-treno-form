@@ -65,49 +65,55 @@ generateBtn.addEventListener('click', function () {
     var ageValue = ageField.value;
     console.log('Fascia età:', ageValue);
 
+    // Validation Name Value
 
-    var price = kmsValue * 0.21;
-    var priceRange = 'Tariffa ordinaria';
-    var randomCar = Math.floor(Math.random() * 12) + 1;
-    var randomTrain = Math.floor(90000 + Math.random() * 9000);
-    console.log(randomTrain);
+    if (!nameValue || !isNaN(nameValue)) {
+        alert('Campo non valido, Inserire nome per favore')
+    } else {
+
+        var price = kmsValue * 0.21;
+        var priceRange = 'Tariffa ordinaria';
+        var randomCar = Math.floor(Math.random() * 12) + 1;
+        var randomTrain = Math.floor(90000 + Math.random() * 9000);
+        console.log(randomTrain);
 
 
-    // se minorenne
-    if (ageValue === 'min') {
-        price *= 0.8;
-        priceRange = 'Tariffa Minori';
+        // se minorenne
+        if (ageValue === 'min') {
+            price *= 0.8;
+            priceRange = 'Tariffa Minori';
+        }
+
+        // se over 65
+        if (ageValue === 'over65') {
+            price *= 0.6;
+            priceRange = 'Tariffa Senior';
+        }
+
+        //controllo
+
+        console.log(price);
+        console.log(priceRange);
+
+
+
+        // stampa dati negli appositi campi
+        passengerDisplay.innerHTML = nameValue;
+        offerDisplay.innerHTML = priceRange;
+        carDisplay.innerHTML = randomCar;
+        trainDisplay.innerHTML = randomTrain;
+        priceDisplay.innerHTML = '€ ' + price.toFixed(2);
+
+
+        // reset valori inserimento
+        nameField.value = '';
+        ageField.value = 'maj';
+
+
+        //visibilità sezione biglietto
+        ticketSection.classList.remove('hidden');
+
     }
-
-    // se over 65
-    if (ageValue === 'over65') {
-        price *= 0.6;
-        priceRange = 'Tariffa Senior';
-    }
-
-    //controllo
-
-    console.log(price);
-    console.log(priceRange);
-
-
-
-    // stampa dati negli appositi campi
-    passengerDisplay.innerHTML = nameValue;
-    offerDisplay.innerHTML = priceRange;
-    carDisplay.innerHTML = randomCar;
-    trainDisplay.innerHTML = randomTrain;
-    priceDisplay.innerHTML = '€ ' + price.toFixed(2);
-
-
-    // reset valori inserimento
-    nameField.value = '';
-    ageField.value = 'maj';
-
-
-    //visibilità sezione biglietto
-    ticketSection.classList.remove('hidden');
-
 });
 
 // Bottone reset totale 
