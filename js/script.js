@@ -1,0 +1,61 @@
+/*Quali campi inserire nel form:
+Una casella di testo per il form del passeggero
+Una casella numerica per i km
+Una tendina per selezionare la fascia d'età (Maggiorenne, Minorenne, Over65)
+NON E' NECESSARIA ALCUNA VALIDAZIONE
+Come calcolare  il prezzo:
+il prezzo del biglietto è definito in base ai km(0.21 € al km)
+va applicato uno sconto del 20 % per i minorenni
+va applicato uno sconto del 40 % per gli over 65.
+L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali,
+Cosa stampare sul biglietto:
+Nome passeggero
+Codice treno(inseriamo una stringa a caso, per ora)
+Numero carrozza(randomizziamo una carrozza da 1 a 12)
+Prezzo(stampato con due decimali)
+Tariffa applicata all'utente (Tariffa minori, Tariffa ordinaria, Tariffa Over65) */
+
+
+
+/*STEP
+
+1 - creare variabili per targetizzare elementi in html necessari;
+2 - creare variabili che raccolgano dati dagli input necessari per effettuare calcolo al click del button.
+
+3 - applicare al button generate listenevent();
+3a - lavorare all'interno del bottone per eseguire i calcoli appropriati;
+- prezzo base biglietto kms * 0.21;
+- casistiche in cui viene applicato lo sconto con 2 if;
+4 - a seconda della fascia di età selezionata nella sezione offerta viene stampato valore appropriato.
+5- carrozza genera un numero random da 0 a 12 con math.
+6 - Stampa di tutti gli elementi nelle rispettive sezioni dopo aver premuto il bottone.
+7 - programmare bottone reset per svuotare gli input al click;
+
+*/
+
+// Var Campi di inserimento dati
+var nameField = document.getElementById('name');
+var kmsField = document.getElementById('kms');
+var ageField = document.getElementById('age');
+var generateBtn = document.getElementById('generate-btn');
+var resetBtn = document.getElementById('reset-btn');
+
+
+// Var DATI inseriti
+var nameValue = nameField.value;
+console.log('Nome inserito: ', nameValue);
+var kmsValue = kmsField.value;
+console.log('Distanza percorsa: ', kmsValue);
+var ageValue = ageField.value;
+console.log('Fascia età:', ageValue);
+
+// Bottone generazione biglietto
+generateBtn.addEventListener('click', function () {
+    alert('cliccato');
+});
+
+
+
+
+
+
