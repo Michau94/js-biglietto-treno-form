@@ -113,6 +113,8 @@ generateBtn.addEventListener('click', function () {
         //visibilità sezione biglietto
         ticketSection.classList.remove('hidden');
 
+        //animation ticket (sperimentale)
+        ticketSection.classList.add('animation');
     }
 });
 
@@ -124,6 +126,9 @@ resetBtn.addEventListener('click', function () {
 
     // Reset nasconde di nuovo la sezione biglietto
     ticketSection.classList.add('hidden');
+
+    // REset animation ticket (sperimentale)
+    ticketSection.classList.remove('animation');
 });
 
 

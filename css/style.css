@@ -65,6 +65,16 @@ body {
     background-color: rgba(0, 0, 0, .3);
     font-size: 1.2rem;
     box-shadow: 5px 6px 5px 3px red;
+    animation: fromtop 2s linear;
+}
+
+@keyframes fromtop {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 .info {
@@ -88,4 +98,20 @@ body {
     margin: 20px 0;
     font-size: 1.2rem;
     box-shadow: 5px 6px 5px 3px red;
+}
+
+/* TESTING STUFF
+non so se è giusto ma mi sono divertito un sacco   */
+
+.animation {
+    animation: frombottom 2s ease;
+}
+
+@keyframes frombottom {
+    from {
+        transform: translateY(80%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
