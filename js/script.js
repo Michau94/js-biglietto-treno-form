@@ -39,6 +39,7 @@ var kmsField = document.getElementById('kms');
 var ageField = document.getElementById('age');
 var generateBtn = document.getElementById('generate-btn');
 var resetBtn = document.getElementById('reset-btn');
+var errorAlert = document.getElementById('error');
 
 
 
@@ -68,9 +69,11 @@ generateBtn.addEventListener('click', function () {
     // Validation Name Value - kms value
 
     if ((!nameValue) || !isNaN(nameValue)) {
-        alert('Campo nome non valido!');
+        errorAlert.innerHTML = 'Campo nome non valido!';
+        errorAlert.classList.remove('hidden');
     } else if (isNaN(kmsValue) || kmsValue < 10 || !kmsValue) {
-        alert('Campo kms non valido!');
+        errorAlert.innerHTML = 'Campo kms non valido!';
+        errorAlert.classList.remove('hidden');
     } else {
 
         var price = kmsValue * 0.21;
@@ -125,6 +128,8 @@ resetBtn.addEventListener('click', function () {
     nameField.value = '';
     kmsField.value = '10';
     ageField.value = 'maj';
+    errorAlert.classList.remove('hidden');
+    errorAlert.innerHTML = '';
 
     // Reset nasconde di nuovo la sezione biglietto
     ticketSection.classList.add('hidden');

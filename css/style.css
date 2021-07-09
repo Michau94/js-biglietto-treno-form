@@ -41,7 +41,7 @@ body {
 }
 
 .hidden {
-    visibility: hidden;
+    display: none;
 }
 
 .flex {
@@ -78,6 +78,16 @@ body {
     }
 }
 
+#error {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+.alert {
+    border-radius: 15px;
+}
+
 .info {
     display: inline-block;
 }
@@ -105,7 +115,7 @@ body {
 non so se è giusto ma mi sono divertito un sacco   */
 
 .animation {
-    animation: frombottom 2s ease;
+    animation: frombottom 2s ease forwards;
 }
 
 @keyframes frombottom {
@@ -113,6 +123,6 @@ non so se è giusto ma mi sono divertito un sacco   */
         transform: translateY(80%);
     }
     to {
-        transform: translateY(0);
+        transform: translateY(40%);
     }
 }
