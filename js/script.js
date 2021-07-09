@@ -67,14 +67,16 @@ generateBtn.addEventListener('click', function () {
 
     // Validation Name Value - kms value
 
-    if ((!nameValue) || !isNaN(nameValue) || isNaN(kmsValue) || kmsValue < 1) {
-        alert('Campo non valido, Inserire nome per favore')
+    if ((!nameValue) || !isNaN(nameValue)) {
+        alert('Campo nome non valido!');
+    } else if (isNaN(kmsValue) || kmsValue < 10 || !kmsValue) {
+        alert('Campo kms non valido!');
     } else {
 
         var price = kmsValue * 0.21;
         var priceRange = 'Tariffa ordinaria';
         var randomCar = Math.floor(Math.random() * 12) + 1;
-        var randomTrain = Math.floor(90000 + Math.random() * 9000);
+        var randomTrain = Math.floor(Math.random() * (100000 - 90000)) + 90000;
         console.log(randomTrain);
 
 
