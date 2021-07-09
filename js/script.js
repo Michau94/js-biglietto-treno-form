@@ -65,9 +65,9 @@ generateBtn.addEventListener('click', function () {
     var ageValue = ageField.value;
     console.log('Fascia età:', ageValue);
 
-    // Validation Name Value
+    // Validation Name Value - kms value
 
-    if ((!nameValue) || !isNaN(nameValue) || isNaN(kmsValue)) {
+    if ((!nameValue) || !isNaN(nameValue) || isNaN(kmsValue) || kmsValue < 1) {
         alert('Campo non valido, Inserire nome per favore')
     } else {
 
