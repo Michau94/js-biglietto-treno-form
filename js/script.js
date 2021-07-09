@@ -60,14 +60,14 @@ generateBtn.addEventListener('click', function () {
 
     var nameValue = nameField.value;
     console.log('Nome inserito: ', nameValue);
-    var kmsValue = kmsField.value;
+    var kmsValue = parseInt(kmsField.value);
     console.log('Distanza percorsa: ', kmsValue);
     var ageValue = ageField.value;
     console.log('Fascia età:', ageValue);
 
     // Validation Name Value
 
-    if (!nameValue || !isNaN(nameValue)) {
+    if ((!nameValue) || !isNaN(nameValue) || isNaN(kmsValue)) {
         alert('Campo non valido, Inserire nome per favore')
     } else {
 
