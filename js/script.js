@@ -78,7 +78,9 @@ generateBtn.addEventListener('click', function () {
         errorAlert.classList.remove('hidden');
     } else {
         // campo alert nascosto se tutto regolare
-        errorAlert.classList.add('hidden');
+        if (!errorAlert.classList.contains('hidden')) {
+            errorAlert.classList.add('hidden');
+        }
 
         var price = kmsValue * 0.21;
         var priceRange = 'Tariffa ordinaria';
@@ -117,6 +119,7 @@ generateBtn.addEventListener('click', function () {
         // reset valori inserimento
         nameField.value = '';
         ageField.value = 'maj';
+
 
 
         //visibilità sezione biglietto
