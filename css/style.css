@@ -120,9 +120,9 @@ non so se è giusto ma mi sono divertito un sacco   */
 
 @keyframes frombottom {
     from {
-        transform: translateY(80%);
+        transform: translateY(100%);
     }
     to {
-        transform: translateY(40%);
+        transform: translateY(10%);
     }
 }
