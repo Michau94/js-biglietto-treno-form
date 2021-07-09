@@ -54,7 +54,6 @@ body {
 .flex-c {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -67,6 +66,7 @@ body {
     font-size: 1.2rem;
     box-shadow: 5px 6px 5px 3px red;
     animation: fromtop 2s linear;
+    margin-top: 50px;
 }
 
 @keyframes fromtop {

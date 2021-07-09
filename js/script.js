@@ -69,13 +69,15 @@ generateBtn.addEventListener('click', function () {
     // Validation Name Value - kms value
 
     if ((!nameValue) || !isNaN(nameValue)) {
+        // alert campo nome
         errorAlert.innerHTML = 'Campo nome non valido!';
         errorAlert.classList.remove('hidden');
     } else if (isNaN(kmsValue) || kmsValue < 10 || !kmsValue) {
+        //alert campo kms
         errorAlert.innerHTML = 'Campo kms non valido!';
         errorAlert.classList.remove('hidden');
     } else {
-
+        // campo alert nascosto se tutto regolare
         errorAlert.classList.add('hidden');
 
         var price = kmsValue * 0.21;
