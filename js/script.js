@@ -76,6 +76,8 @@ generateBtn.addEventListener('click', function () {
         errorAlert.classList.remove('hidden');
     } else {
 
+        errorAlert.classList.add('hidden');
+
         var price = kmsValue * 0.21;
         var priceRange = 'Tariffa ordinaria';
         var randomCar = Math.floor(Math.random() * 12) + 1;
