@@ -18,20 +18,22 @@
         <div class="container flex-c">
 
             <section id="info-section" class="p-15 text-center">
-                <h1 class="p-15">FrecciaMichau</h1>
-                <div id="error" class="alert hidden">Messaggio errore qui</div>
-                <h2>Inserisci i tuoi dati di viaggio: </h2>
+                <div class="flex-c">
+                    <h1 class="p-15">FrecciaMichau</h1>
+                    <div id="error" class="alert hidden text-center">Messaggio errore qui</div>
+                    <h2>Inserisci i tuoi dati di viaggio:</h2>
+                </div>
                 <div class="info m-15">
-                    <label for="name">Nome Passeggero</label>
+                    <label for="name">Nome Passeggero:</label>
                     <input type="text" id="name">
                 </div>
 
                 <div class="info m-15">
-                    <label for="kms">Distanza percorsa (km)</label>
+                    <label for="kms">Distanza percorsa (km):</label>
                     <input type="number" id="kms" min="10" value="10">
                 </div>
                 <div class="info ">
-                    <label for="age">Fascia d'età: </label>
+                    <label for="age">Fascia d'età:</label>
                     <select name="age" id="age">
                         <option value="min">Minorenne</option>
                         <option value="maj" selected>Maggiorenne</option>
@@ -39,9 +41,9 @@
                     </select>
                 </div>
                 <!-- bottoni -->
-                <div class="buttons m-15">
-                    <button id="generate-btn">Genera Biglietto</button>
-                    <button id="reset-btn">Resetta</button>
+                <div class="buttons m-15 flex justify-center">
+                    <div id="generate-btn">Genera Biglietto</div>
+                    <div id="reset-btn">Resetta</div>
                 </div>
             </section>
             <!-- riepilogo dati bigleitto-->

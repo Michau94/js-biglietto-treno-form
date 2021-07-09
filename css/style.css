@@ -10,7 +10,6 @@
 body {
     height: 100vh;
     background-image: url(../img/trenitalia_hero_2x.jpg);
-    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     color: white;
@@ -57,6 +56,10 @@ body {
     align-items: center;
 }
 
+.justify-center {
+    justify-content: center;
+}
+
 /* MAIN */
 
 #info-section {
@@ -67,6 +70,10 @@ body {
     box-shadow: 5px 6px 5px 3px red;
     animation: fromtop 2s linear;
     margin-top: 50px;
+}
+
+#info-section input {
+    border-radius: 15px;
 }
 
 @keyframes fromtop {
@@ -86,6 +93,7 @@ body {
 
 .alert {
     border-radius: 15px;
+    width: 50%;
 }
 
 .info {
@@ -97,6 +105,15 @@ body {
 #generate-btn, #reset-btn {
     padding: 15px;
     margin: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+#generate-btn:hover, #reset-btn:hover {
+    background-color: darkred;
+    color: #fff;
 }
 
 /* TICKET SECTION */
