@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrecciaMichau</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- INSERIMENTO DATI VIAGGIATORE -->
+    <main>
+        <div id="root" class="container flex-c">
+
+            <section id="info-section" class="p-15 text-center">
+                <div class="flex-c">
+                    <h1 class="p-15">FrecciaMichau</h1>
+                    <div v-if="(!this.name) || !isNaN(this.name)" id="error" class="alert  text-center">Campo nome
+                        non valido!</div>
+                    <div v-else-if="isNaN(this.kmsValue) || this.kmsValue < 10 || !this.kmsValue" id="error"
+                        class="alert text-center">Campo kms non valido!</div>
+                    <h2>Inserisci i tuoi dati di viaggio:</h2>
+                </div>
+                <div class="info m-15">
+                    <label for="name">Nome Passeggero:</label>
+                    <input v-model="name" type="text" id="name" placeholder="Name Here">
+                </div>
+
+                <div class="info m-15">
+                    <label for="kms">Distanza percorsa (km):</label>
+                    <input v-model="kmsValue" type="number" id="kms" min="10" value="10">
+                </div>
+                <div class="info ">
+                    <label for="age">Fascia d'età:</label>
+                    <select v-model="selectedAge" name="age" id="age">
+                        <option v-for="option in age" :value="option.value"> {{ option.name }}</option>
+                    </select>
+                </div>
+                <!-- bottoni -->
+                <div class="buttons m-15 flex justify-center">
+                    <div @click="calculatePrice" id="generate-btn">Genera Biglietto</div>
+                    <div @click="resetValues" id="reset-btn">Resetta</div>
+                </div>
+            </section>
+            <!-- riepilogo dati bigleitto-->
+            <section v-if="price" id="ticket-section" class="p-15 text-center animation">
+                <h1>Il tuo biglietto</h1>
+                <div class="flex">
+                    <div class="info p-15"><strong>Nome Passeggero:</strong>
+                        <div class="text-red"> {{ name }}</div>
+                    </div>
+                    <div class="info p-15"><strong>Offerta:</strong>
+                        <div id="offer" class="text-red"> {{ priceRange }}</div>
+                    </div>
+                    <div class="info p-15"><strong>Carrozza:</strong>
+                        <div id="car" class="text-red">{{ randomCar }}</div>
+                    </div>
+                    <div class="info p-15"><strong>Codice treno:</strong>
+                        <div id="train" class="text-red">{{ randomTrain }}</div>
+                    </div>
+                    <div class="info p-15"><strong>Prezzo biglietto:</strong>
+                        <div class="text-red" id="price">€{{ price }}</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+
+
+
+
+
+    <script src="./js/VueVersion.js"></script>
+</body>
+
+</html>
